@@ -1,12 +1,6 @@
 <template>
-  <div class="content">
-    docs
-  </div>
+  <div class="content">docs</div>
 </template>
-<script setup>
+<script setup></script>
 
-</script>
-
-<style scoped>
-
-</style>
+<style scoped></style>

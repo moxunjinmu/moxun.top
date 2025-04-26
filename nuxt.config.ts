@@ -1,20 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { defineNuxtConfig } from "nuxt/config";
 
-
 export default defineNuxtConfig({
-  compatibilityDate: '2024-11-01',
+  compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
-  modules: [
-    '@pinia/nuxt',
-    '@nuxt/ui',
-    '@unocss/nuxt',
-  ],
+  modules: ["@pinia/nuxt", "@nuxt/ui", "@unocss/nuxt", "@nuxt/eslint"],
   unocss: {
     // 预设
-    uno: true,            // 启用@unocss/preset-uno
-    attributify: true,    // 启用@unocss/preset-attributify
-    icons: {              // 启用@unocss/preset-icons
+    uno: true, // 启用@unocss/preset-uno
+    attributify: true, // 启用@unocss/preset-attributify
+    icons: {
+      // 启用@unocss/preset-icons
       extraProperties: {
         display: "inline-block",
       },
@@ -30,7 +26,7 @@ export default defineNuxtConfig({
     shortcuts: [],
     rules: [],
   },
-  css: ['normalize.css'], // 全局引入normalize.css
+  css: ["normalize.css"], // 全局引入normalize.css
   fonts: {
     providers: {
       // 禁用Google字体
@@ -42,6 +38,6 @@ export default defineNuxtConfig({
     families: [
       // 使用本地字体
       // { name: 'CustomFont', src: '/fonts/custom-font.woff2' }
-    ]
-  }
-})
+    ],
+  },
+});
