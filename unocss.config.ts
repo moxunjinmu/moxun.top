@@ -14,6 +14,7 @@ export default defineConfig({
     {
       "flex-center": "flex justify-center items-center",
     "flex-col": "flex flex-col",
+    'btn': 'px-4 py-2 rounded inline-block bg-teal-600 text-white cursor-pointer hover:bg-teal-700',
     }
   ],
   theme: {
