@@ -8,7 +8,6 @@
 
 <script setup lang="ts">
   import { isExternal } from "@/utils/validate";
-  // import { Icon as IconifyIcon } from '@iconify/vue'
 
   // vue3.5 是可以支持解构 保持响应式的 但是 加了 withDefaults 就会失去响应式 所以这样不能直接解构
   const props = withDefaults(

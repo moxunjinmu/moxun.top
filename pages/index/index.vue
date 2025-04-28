@@ -4,11 +4,11 @@
     <h1 class="text-2xl font-bold btn">Hello UnoCSS</h1>
   </div>
   <div>
-    <div class="i-ant-design-aim-outlined" />
+    <div class="i-ant-design-aim-outlined"></div>
     <!-- 亮色模式下的太阳，暗色模式下的月亮，来自 Carbon -->
-    <button class="i-carbon-sun dark:i-carbon-moon" />
+    <button class="i-carbon-sun dark:i-carbon-moon"></button>
     <!-- 来自 Material Design 图标库的橙色警报 -->
-    <div class="i-mdi-alarm text-orange-400" />
+    <div class="i-mdi-alarm text-orange-400"></div>
     <SvgIcon iconName="ant-design-aim-outlined" />
   </div>
 </template>
