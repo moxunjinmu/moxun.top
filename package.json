@@ -17,6 +17,8 @@
     "@nuxt/ui": "^3.1.0",
     "@pinia/nuxt": "^0.11.0",
     "@unocss/reset": "66.1.0-beta.12",
+    "@vueuse/core": "^13.1.0",
+    "@vueuse/nuxt": "^13.1.0",
     "normalize.css": "^8.0.1",
     "nuxt": "^3.16.2",
     "pinia": "^3.0.2",
@@ -32,10 +34,13 @@
     "@iconify-json/mdi-light": "^1.2.2",
     "@pinia-plugin-persistedstate/nuxt": "^1.2.1",
     "@unocss/nuxt": "66.1.0-beta.12",
+    "axios": "^1.9.0",
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-prettier": "^5.2.6",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "prettier": "^3.5.3",
+    "sass": "^1.87.0",
+    "sass-loader": "^16.0.5",
     "typescript": "^5.8.3",
     "unocss": "66.1.0-beta.12"
   }

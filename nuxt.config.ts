@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "@nuxt/ui",
     "@unocss/nuxt",
+    "@vueuse/nuxt",
     "@nuxt/eslint",
     "@pinia/nuxt",
     "@pinia-plugin-persistedstate/nuxt",
