@@ -16,7 +16,12 @@
         <!-- 右侧功能区 -->
         <div class="flex items-center space-x-4">
           <!-- 搜索按钮 -->
-          <UButton icon="i-carbon-search" color="primary" variant="ghost" @click="openSearch" />
+          <UButton
+            icon="i-carbon-search"
+            color="primary"
+            variant="ghost"
+            @click="openSearch"
+          />
 
           <!-- Github链接 -->
           <UButton
@@ -24,7 +29,7 @@
             color="primary"
             variant="ghost"
             as="a"
-            href="https://github.com/your-username"
+            href="https://github.com/moxunjinmu"
             target="_blank"
           />
 
@@ -37,7 +42,9 @@
           />
 
           <!-- 登录按钮 -->
-          <UButton icon="i-carbon-user" color="primary" variant="soft"> 登录 </UButton>
+          <UButton icon="i-carbon-user" color="primary" variant="soft">
+            登录
+          </UButton>
 
           <!-- 移动端菜单按钮 -->
           <USlideover>
@@ -51,7 +58,10 @@
             <template #content>
               <div class="p-2">
                 <h2 class="text-xl font-bold mb-2">导航菜单</h2>
-                <UNavigationMenu :items="navigationItems" orientation="vertical" />
+                <UNavigationMenu
+                  :items="navigationItems"
+                  orientation="vertical"
+                />
               </div>
             </template>
           </USlideover>
@@ -62,43 +72,50 @@
 </template>
 
 <script setup lang="ts">
-  import { ref, computed } from "vue";
-  import { useNavigationStore } from "~/stores/navigation";
-  import { useAppColorMode } from "~/composables/useAppColorMode";
+import { ref, computed } from "vue";
+import { useNavigationStore, type NavItem } from "~/stores/navigation";
+import { useAppColorMode } from "~/composables/useAppColorMode";
+// 定义导航项目的结果类型
+interface NavItemResult {
+  label: string;
+  to?: string;
+  href?: string;
+  target?: string;
+  children?: NavItemResult[];
+}
+// 菜单状态
+const isMenuOpen = ref(false);
 
-  // 菜单状态
-  const isMenuOpen = ref(false);
+// 主题切换
+const { isDark, toggleColorMode } = useAppColorMode();
 
-  // 主题切换
-  const { isDark, toggleColorMode } = useAppColorMode();
+// 搜索功能
+const openSearch = () => {
+  // 实现搜索功能
+  alert("搜索功能待实现");
+};
 
-  // 搜索功能
-  const openSearch = () => {
-    // 实现搜索功能
-    alert("搜索功能待实现");
-  };
-
-  // 导航数据
-  const navigationStore = useNavigationStore();
-  const navigationItems = computed(() => {
-    return navigationStore.navItems.map((item: any) => {
-      const mapNavItem = (navItem: any) => {
-        const result: any = {
-          label: navItem.name,
-          to: navItem.path,
-          href: navItem.external ? navItem.path : undefined,
-          target: navItem.external ? "_blank" : undefined,
-        };
-        if (navItem.path) delete result.href;
-
-        if (navItem.children?.length) {
-          result.children = navItem.children.map(mapNavItem);
-        }
-
-        return result;
+// 导航数据
+const navigationStore = useNavigationStore();
+const navigationItems = computed(() => {
+  return navigationStore.navItems.map((item: NavItem) => {
+    const mapNavItem = (navItem: NavItem) => {
+      const result: NavItemResult = {
+        label: navItem.name,
+        to: navItem.path,
+        href: navItem.external ? navItem.path : undefined,
+        target: navItem.external ? "_blank" : undefined,
       };
+      if (navItem.path) delete result.href;
 
-      return mapNavItem(item);
-    });
+      if (navItem.children?.length) {
+        result.children = navItem.children.map(mapNavItem);
+      }
+
+      return result;
+    };
+
+    return mapNavItem(item);
   });
+});
 </script>
