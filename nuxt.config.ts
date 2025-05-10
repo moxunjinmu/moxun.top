@@ -4,7 +4,7 @@ export default defineNuxtConfig({
 
   modules: ["@nuxt/ui", "@nuxt/eslint", "@pinia/nuxt", "@vueuse/nuxt"],
 
-  css: ["./app/assets/css/main.css"],
+  css: ["~/assets/css/main.css"],
 
   future: {
     compatibilityVersion: 4,
@@ -24,4 +24,14 @@ export default defineNuxtConfig({
       // { name: 'CustomFont', src: '/fonts/custom-font.woff2' }
     ],
   },
+  
+  // 解决tailwindcss sourcemap警告
+  vite: {
+    build: {
+      sourcemap: true
+    },
+    css: {
+      devSourcemap: true
+    }
+  }
 });
